@@ -1,5 +1,5 @@
 import Progress from '../models/Progress.js';
-import Lesson from '../models/Lesson.js';
+import Lesson from '../models/lesson.js';
 
 export const markLessonComplete = async (req, res) => {
   const { courseId, lessonId } = req.body;
