@@ -51,8 +51,8 @@ EduCore/
 ## 📦 Installation
 
 bash
-git clone https://github.com/yourusername/EduCore-Backend.git
-cd EduCore-Backend
+git clone https://github.com/CYPRIANCY/E-Learning-Platform-Backend
+cd Full Backend
 npm install
 cp .env.example .env  # Add your MongoDB URI, PayPal keys, etc.
 npm run dev
