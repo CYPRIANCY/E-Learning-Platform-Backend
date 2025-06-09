@@ -28,6 +28,10 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.get("/", (req, res)=>{
+  res.status(200).json({message: "Welcome CYPIDON Learning Managerment System"})
+})
+
 app.use('/api/auth', authRoutes);
 app.use('/api/courses', courseRoutes);
 app.use('/api/enrollments', enrollmentRoutes);
@@ -39,7 +43,6 @@ app.use('/api/notifications', notificationRoutes);
 app.use('/api/payments', paymentRoutes);
 app.use('/api/certificates', certificateRoutes);
 app.use('/api/messages', messageRoutes);
-
 
 // Start Server
 const PORT = process.env.PORT || 5000;
