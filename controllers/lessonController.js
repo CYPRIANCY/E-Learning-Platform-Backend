@@ -2,6 +2,7 @@
 import Course from '../models/Course.js';
 import Lesson from '../models/Lesson.js';
 
+
 export const addLesson = async (req, res) => {
   const { courseId, title, content, videoUrl, order } = req.body;
 
@@ -9,7 +10,7 @@ export const addLesson = async (req, res) => {
     const course = await Course.findOne({ _id: courseId, instructor: req.user.id });
     if (!course) return res.status(403).json({ message: 'Access denied' });
 
-    const newLesson = await lesson.create({
+    const newLesson = await Lesson.create({
       course: courseId,
       title,
       content,
@@ -52,7 +53,7 @@ export const updateLesson = async (req, res) => {
 
     const updated = await lesson.save();
     res.json(updated);
-  } catch (error) {
+  } catch (error) {   
     res.status(500).json({ message: 'Lesson update failed', error });
   }
 };
